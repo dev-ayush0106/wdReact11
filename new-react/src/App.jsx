@@ -4,6 +4,7 @@ import Third from "./3.Third/Third";
 import Fourth from "./4.Fourth/Fourth";
 import Fourth1 from "./4.Fourth/Fourth1";
 import Fourth2 from "./4.Fourth/Fourth2";
+import Fifth from "./5.Fifth/fifth";
 import "./App.css"
 
 function App(){
@@ -29,7 +30,10 @@ function App(){
     {/* Class 4 */}
     {/* <Fourth/> */}
     {/* <Fourth1/> */}
-    <Fourth2/>
+    {/* <Fourth2/> */}
+
+    {/* Class 5 */}
+    <Fifth/>
     
     </>
     
