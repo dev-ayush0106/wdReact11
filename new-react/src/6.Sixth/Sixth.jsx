@@ -44,8 +44,6 @@ const Sixth = () => {
         }
     }
 
-
-
     return (
         <div>
             <h1>Manually Form Handling</h1>
