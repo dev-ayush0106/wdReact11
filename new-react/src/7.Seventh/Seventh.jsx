@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { nanoid } from 'nanoid'
+import { toast } from 'react-toastify';
 const Seventh = () => {
-    let [todo, setTodo] = useState([]);
-  let [title, setTitle] = useState("");
+  let [todo, setTodo] = useState([]); // where al, the todo are stored
+  let [title, setTitle] = useState(""); // stores the value of input
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTodo = {
-      id: nanoid(),
+      id: nanoid(), // random id generate
       title,
       isCompleted: false
     }
@@ -18,16 +19,25 @@ const Seventh = () => {
 
     // setTodo([...todo],newTodo)
     setTitle('');
+    toast.success("Todo Created")
 
   }
 
   const toggleTask = (id) => {
-    setTodo((prevTodo) =>
-      prevTodo.map((t) => t.id === id ? { ...t, isCompleted: !todo.isCompleted } : t)
-    );
-    console.log(todo);
-  }
+  setTodo((prevTodo) =>
+    prevTodo.map((t) =>
+      t.id === id ? { ...t, isCompleted: !t.isCompleted } : t
+    )
+  );
+  
+};
   console.log(todo);
+
+const deleteTodo=(id)=>{
+  let filteredTodo=todo.filter((t)=> t.id!==id); // filter function helps us to filterout the match
+  setTodo(filteredTodo);
+  toast.error("Todo Deleted")
+}
 
   return (
     <div>
@@ -42,7 +52,11 @@ const Seventh = () => {
         {
           todo.map((el) => {
             return (
-              <li onClick={() => { toggleTask(el.id) }} id={el.id}>{el.title}</li>
+              <>
+              <li className={(el.isCompleted)?"line":""} onClick={() => { toggleTask(el.id) }} id={el.id}>{el.title}
+              </li>
+              <button onClick={()=>{deleteTodo(el.id)}}>Delete Task</button>
+              </>
             )
           })
         }
