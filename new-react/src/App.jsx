@@ -9,6 +9,7 @@ import Sixth from "./6.Sixth/Sixth";
 import Seventh from "./7.Seventh/Seventh";
 import Eight from "./8.Eight/Eight";
 import Eight1 from "./8.Eight/Eight1";
+import Ninth from "./9.Ninth/Ninth";
 import "./App.css"
 
 function App(){
@@ -46,7 +47,9 @@ function App(){
     {/* <Seventh/> */}
 
     {/* <Eight/> */}
-    <Eight1/>
+    {/* <Eight1/> */}
+
+      <Ninth/>
     </>
     
   )
